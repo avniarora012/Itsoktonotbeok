@@ -1,0 +1,154 @@
+/* blog.css */
+
+/* Base Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f6f8f7;
+    color: #333;
+    line-height: 1.7;
+  }
+  
+  /* Header */
+  header {
+    background-color: #dfece1;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #cdddcf;
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+    color: #2e473b;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+    color: #4a6356;
+  }
+  
+  nav {
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #2e473b;
+    margin: 0 0.8rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #5d8b72;
+  }
+  
+  /* Sections */
+  section {
+    padding: 3rem 10%;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h2 {
+    color: #2e473b;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #8bc5a3;
+    padding-left: 0.7rem;
+  }
+  
+  h3 {
+    color: #3d5e4e;
+    margin-bottom: 0.5rem;
+  }
+  
+  p, li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li::before {
+    content: '🌿 ';
+  }
+  
+  .hero {
+    background: #e9f3ec;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  article {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  a {
+    color: #5d8b72;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  footer {
+    background: #dfece1;
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    color: #3d5e4e;
+    border-top: 2px solid #cdddcf;
+  }
+  
+  /* Animations */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    section {
+      padding: 2rem 5%;
+    }
+    header h1 {
+      font-size: 1.8rem;
+    }
+    nav a {
+      display: block;
+      margin: 0.5rem 0;
+    }
+  }
+  
