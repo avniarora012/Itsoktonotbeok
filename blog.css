@@ -337,7 +337,7 @@
 .surprise-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -397,6 +397,7 @@
 }
 
   
+
 
 
 
