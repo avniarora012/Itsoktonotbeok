@@ -341,16 +341,20 @@
   gap: 2rem;
   margin-top: 2rem;
 }
-
-
-
+.surprise-intro h2, 
+.surprise-intro p {
+  text-align: center;
+}
 .surprise-intro {
+  max-width: 850px;        /* controls width */
+  margin: 2rem auto;        /* centers horizontally */
   background: #eef7f1;
   padding: 2rem;
   border-radius: 12px;
-  margin: 2rem 0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
+
+
 
 .surprise-intro h2 {
   color: #2e473b;
@@ -395,6 +399,7 @@
 }
 
   
+
 
 
 
