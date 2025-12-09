@@ -334,6 +334,18 @@
     }
   }
 /* Surprise Page */
+.surprise-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.surprise-intro, .forms-section {
+  flex: 1;
+}
+
 .surprise-intro {
   background: #eef7f1;
   padding: 2rem;
@@ -385,6 +397,7 @@
 }
 
   
+
 
 
 
