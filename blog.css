@@ -397,8 +397,20 @@
 .form-button:hover {
   background: #6aa986;
 }
+.career-section {
+  margin-bottom: 3rem;   /* spacing between each career */
+}
+
+.career-section h3 {
+  margin-bottom: 0.3rem;
+}
+
+.career-section p {
+  margin-bottom: 1rem;
+}
 
   
+
 
 
 
