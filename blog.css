@@ -409,7 +409,27 @@
   margin-bottom: 1rem;
 }
 
-  
+  .career-btn-group {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.career-btn {
+  background: #7fbf9a;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.career-btn:hover {
+  background: #6aa986;
+}
+
+
 
 
 
