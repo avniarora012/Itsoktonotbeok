@@ -1,330 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MBBS Career Map 🌿 — It’s OK to Not Be OK</title>
-  <meta name="description" content="MBBS Career Map — a gentle, honest walkthrough from Class 11 to MBBS admission with real-feel cards and easy share options."/>
-  <style>
-    :root{
-      --bg: #f2fbf5;
-      --card: #eef7f1;
-      --accent: #7fbf9a;
-      --accent-dark: #3d5e4e;
-      --muted: #436056;
-      --rounded: 14px;
-      --glass: rgba(255,255,255,0.6);
-      --shadow: 0 6px 18px rgba(30,50,40,0.06);
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBBS Journey 🌿 | It’s OK to Not Be OK</title>
+<link rel="stylesheet" href="blog.css">
 
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased;}
-    .container{max-width:1100px;margin:36px auto;padding:28px;}
-    header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.6rem;}
-    header h1{margin:0;color:var(--accent-dark);font-size:1.6rem;letter-spacing:0.2px}
-    header p{margin:0;color:var(--muted);font-size:0.95rem}
-    .hero{
-      background:linear-gradient(180deg, rgba(127,191,154,0.06), rgba(127,191,154,0.02));
-      padding:18px;border-radius:12px;box-shadow:var(--shadow);display:flex;gap:18px;align-items:center;
-    }
-    .hero .left{flex:1}
-    .hero .right{width:260px;text-align:right}
-    .hero h2{margin:0;font-size:1.15rem;color:var(--accent-dark)}
-    .hero p{margin:8px 0 0;font-size:0.95rem;color:var(--muted)}
-    .flow {
-      margin-top:22px;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:18px;
-    }
+<style>
+  .page-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
 
-    /* Journey card style */
-    .journey-card {
-      background:var(--card);
-      padding:18px;border-radius:var(--rounded);
-      box-shadow:var(--shadow);display:flex;gap:14px;align-items:flex-start;
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .journey-card:hover{transform:translateY(-6px); box-shadow:0 10px 24px rgba(30,50,40,0.08);}
-    .badge {width:56px;height:56px;border-radius:10px;flex:0 0 56px;background:linear-gradient(180deg,var(--accent), #aee0c6);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1.05rem;box-shadow:inset 0 -2px 0 rgba(0,0,0,0.06)}
-    .step {flex:1}
-    .step h3{margin:0;color:var(--accent-dark);font-size:1.05rem}
-    .step p{margin:6px 0 0;color:var(--muted);line-height:1.45}
-    .muted-small{font-size:0.88rem;color:#577068;margin-top:8px}
+  .soft-card {
+    background: #f4faf6;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
 
-    /* Experiences area */
-    .experiences{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .exp-card{background:white;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(30,50,40,0.04)}
-    .exp-card h4{margin:0;color:var(--accent-dark);font-size:0.98rem}
-    .exp-card p{margin:8px 0 0;color:#455b52;font-size:0.95rem;line-height:1.45}
-    .exp-meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;color:#748b84;font-size:0.86rem}
+  h2 {
+    color: #2e473b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
 
-    /* Submission mini-widget */
-    .mini-submit{margin-top:22px;background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.6));padding:14px;border-radius:12px;border:1px solid rgba(125,170,145,0.08);display:flex;gap:10px;align-items:center}
-    .mini-submit input[type="text"]{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(80,110,95,0.08);font-size:0.95rem}
-    .mini-submit .btn{background:var(--accent);color:white;padding:10px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
-    .mini-submit small{display:block;color:#62846d;font-size:0.8rem;margin-top:6px}
+  h3 {
+    color: #3d5e4e;
+    margin-bottom: 0.5rem;
+  }
 
-    /* CTA row */
-    .cta-row{display:flex;gap:12px;align-items:center;margin-top:18px}
-    .btn-ghost{background:transparent;border:1px solid rgba(60,90,75,0.08);padding:10px 12px;border-radius:10px;cursor:pointer}
-    .btn-primary{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+  p {
+    color: #4a6659;
+    line-height: 1.6;
+  }
 
-    /* small helpers */
-    .sample-bubble{background:#f5fbf7;border-radius:10px;padding:8px 10px;display:inline-block;color:#4b6a60;font-size:0.9rem}
-    .divider{height:1px;background:rgba(90,120,100,0.06);margin:18px 0;border-radius:2px}
-
-    footer{margin-top:28px;padding:18px;text-align:center;color:#657f75;font-size:0.9rem}
-
-    /* Responsive */
-    @media (min-width:900px){
-      .flow{grid-template-columns: 1fr 340px; align-items:start}
-      .experiences{grid-column:2/3}
-      .journey-list{grid-column:1/2}
-    }
-
-  </style>
+  .experience-card {
+    background: #ffffff;
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+</style>
 </head>
+
 <body>
-  <div class="container" role="main">
-    <header>
-      <div>
-        <h1>MBBS Journey 🌿</h1>
-        <p>Soft, honest steps — from Class 11 choice to MBBS admission. No pressure, just clarity.</p>
-      </div>
-      <div style="text-align:right">
-        <p class="muted-small">Theme: gentle • elder-sibling tone • pastel</p>
-      </div>
-    </header>
+<header>
+  <h1>MBBS Journey 🌿</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="career-maps.html">Career Maps</a>
+    <a href="surprise.html">Surprise Me</a>
+  </nav>
+</header>
 
-    <section class="hero" aria-hidden="false">
-      <div class="left">
-        <h2>Quick path — so you know what to expect</h2>
-        <p>Use this to explain the process simply. Below are the core steps; click to expand details or share a small truth that we can add later.</p>
-      </div>
-      <div class="right">
-        <div class="sample-bubble">Duration: 5.5 years</div>
-        <div class="muted-small" style="margin-top:10px">4.5 years academics + 1 year internship</div>
-      </div>
-    </section>
+<div class="page-wrapper">
 
-    <div class="flow" style="margin-top:18px">
-      <!-- LEFT: Journey cards -->
-      <div class="journey-list">
-        <!-- card 1 -->
-        <article class="journey-card" aria-labelledby="step1">
-          <div class="badge" aria-hidden="true">11</div>
-          <div class="step">
-            <h3 id="step1">Class 11 — Choice</h3>
-            <p>Choose <strong>PCB</strong> or <strong>PCMB</strong>. Physics + Chemistry + Biology are essential; Math is optional. Early clarity helps NEET prep later.</p>
-            <div class="muted-small">Tip: Build a steady study routine — it matters more than coaching.</div>
-          </div>
-        </article>
+  <section class="soft-card">
+    <h2>MBBS, Explained Softly 🌼</h2>
+    <p>A gentle walkthrough of what the journey usually looks like — simple, clear, no rush.</p>
+  </section>
 
-        <!-- card 2 -->
-        <article class="journey-card" aria-labelledby="step2">
-          <div class="badge">12</div>
-          <div class="step">
-            <h3 id="step2">Class 12 — Boards + NEET Prep</h3>
-            <p>Balance board exams and NEET syllabus (Class 11 + 12). Consider mock tests & spaced revision.</p>
-            <div class="muted-small">Tip: Prioritize concepts in Biology and practice MCQs daily.</div>
-          </div>
-        </article>
+  <section class="soft-card">
+    <h3>Step 1 — Class 11 & 12 (Choosing PCB or PCMB)</h3>
+    <p>Students usually choose PCB for medical paths. PCMB adds Math, but Biology remains the core. This is where the foundation begins, slowly and steadily.</p>
+  </section>
 
-        <!-- card 3 -->
-        <article class="journey-card" aria-labelledby="step3">
-          <div class="badge">NE</div>
-          <div class="step">
-            <h3 id="step3">NEET Exam</h3>
-            <p>A single national exam (MCQ based) that determines medical college options—focus on accuracy and time management.</p>
-            <div class="muted-small">Tip: Simulate test conditions for best results.</div>
-          </div>
-        </article>
+  <section class="soft-card">
+    <h3>Step 2 — NEET Preparation</h3>
+    <p>NEET covers Class 11 + 12 Biology, Chemistry, and Physics. Preparation typically starts in Class 11, but everyone moves at their own pace.</p>
+  </section>
 
-        <!-- card 4 -->
-        <article class="journey-card" aria-labelledby="step4">
-          <div class="badge">RK</div>
-          <div class="step">
-            <h3 id="step4">Rank & Options</h3>
-            <p>Your NEET rank decides whether you get government, private, or deemed college seats. Cutoffs vary by state and category.</p>
-            <div class="muted-small">Tip: Check previous years' cutoffs to set realistic targets.</div>
-          </div>
-        </article>
+  <section class="soft-card">
+    <h3>Step 3 — NEET Exam</h3>
+    <p>One national exam that decides medical admissions. MCQ based, long, and honestly — tiring. But with time, students figure out what works for them.</p>
+  </section>
 
-        <!-- card 5 -->
-        <article class="journey-card" aria-labelledby="step5">
-          <div class="badge">CL</div>
-          <div class="step">
-            <h3 id="step5">Counselling</h3>
-            <p>Choice filling in AIQ (15%) and State Quota (85%). Keep alternate college options ready; follow timelines closely.</p>
-            <div class="muted-small">Tip: Keep documents scanned and ranked choices prepared before counselling.</div>
-          </div>
-        </article>
+  <section class="soft-card">
+    <h3>Step 4 — Counselling & College Admission</h3>
+    <p>After NEET results, students go through AIQ (15%) and State Quota (85%). Choice-filling can feel overwhelming, but seniors and guides help.</p>
+  </section>
 
-        <!-- card 6 -->
-        <article class="journey-card" aria-labelledby="step6">
-          <div class="badge">MB</div>
-          <div class="step">
-            <h3 id="step6">MBBS Admission</h3>
-            <p>Admission confirmed → steady study for the 4.5 years followed by a 1-year mandatory internship to complete the degree.</p>
-            <div class="muted-small">Tip: Be kind to yourself—MBBS is a marathon, not a sprint.</div>
-          </div>
-        </article>
+  <section class="soft-card">
+    <h3>Step 5 — MBBS Life (4.5 Years + 1 Year Internship)</h3>
+    <p>Lectures, practicals, postings, exams, and an internship that teaches the real hospital environment. It's long, but deeply meaningful for many.</p>
+  </section>
 
-        <div class="divider" role="separator" aria-hidden="true"></div>
+  <h2 style="margin-top:2rem;">Real Experiences 🌿</h2>
 
-        <!-- Innovative mini submission (one-line) -->
-        <div aria-live="polite" aria-atomic="true">
-          <label style="display:block;font-weight:600;color:var(--accent-dark);margin-bottom:8px">Share one line — what no one tells about MBBS</label>
-          <div class="mini-submit" role="form" aria-label="Quick submission">
-            <input id="quickInput" type="text" placeholder="e.g. 'The emotional pressure is heavier than academic load.'" aria-label="One-line truth input"/>
-            <button id="quickAdd" class="btn">Add</button>
-          </div>
-          <small style="color:#556e63;display:block;margin-top:8px">This is a quick note — we'll ask permission before publishing anything. Or you can submit via the full form below.</small>
-
-          <div style="margin-top:12px;display:flex;gap:8px;align-items:center;">
-            <button id="openForm" class="btn-primary" title="Open Google Form">Open full submission form</button>
-            <button id="copyLink" class="btn-ghost" title="Copy form link to clipboard">Copy form link</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: Experiences + sample truths -->
-      <aside class="experiences" aria-label="Example experiences and truths">
-        <div class="exp-card" aria-labelledby="ex1">
-          <h4 id="ex1">Why I chose MBBS</h4>
-          <p>"I always wanted to help people directly. Medicine felt like the closest fit, even though the path is tough."</p>
-          <div class="exp-meta"><span>Anonymous</span><span>Submitted • sample</span></div>
-        </div>
-
-        <div class="exp-card" aria-labelledby="ex2">
-          <h4 id="ex2">What my day looks like</h4>
-          <p>"Long classes, library time, hospital rounds. Nights include revision and notes — balance is tricky."</p>
-          <div class="exp-meta"><span>Student • 3rd year</span><span>sample</span></div>
-        </div>
-
-        <div class="exp-card" aria-labelledby="ex3">
-          <h4 id="ex3">One thing no one tells you</h4>
-          <p>"Emotional fatigue and mental weight — it's not only about exams but about dealing with human suffering."</p>
-          <div class="exp-meta"><span>Anonymous</span><span>sample truth</span></div>
-        </div>
-
-        <!-- Spot for live-added quick notes -->
-        <div class="exp-card" style="background:linear-gradient(180deg, #ffffff, #f7fff9);" aria-live="polite">
-          <h4 id="live">Recently added (preview)</h4>
-          <div id="liveList" style="margin-top:8px;color:#2f5f4e;font-size:0.95rem">
-            <!-- JS will append items here -->
-            <p style="opacity:0.8">No quick submissions yet — be the first to add a short truth.</p>
-          </div>
-          <div class="exp-meta"><span>Preview only</span><span>you collect & ask permission</span></div>
-        </div>
-
-      </aside>
-    </div>
-
-    <div class="divider" role="separator"></div>
-
-    <section>
-      <h3 style="margin:0 0 8px;color:var(--accent-dark)">Want to share a full story?</h3>
-      <p style="margin:0 0 12px;color:var(--muted)">If you have a bit more to say, the full form accepts longer experiences, permissions, and how you'd like to be credited.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a id="formLink" class="btn-primary" href="#" target="_blank" rel="noopener">Open long form</a>
-        <button id="saveExample" class="btn-ghost">Save sample card to clipboard</button>
-      </div>
-    </section>
-
-    <footer>
-      <small>© 2025 — It’s OK to Not Be OK • Keep it gentle. We ask permission before publishing any personal submission.</small>
-    </footer>
+  <div class="experience-card">
+    <p><strong>“MBBS is rewarding, but no one talks about the emotional load it brings.”</strong><br>
+    — Anonymous</p>
   </div>
 
-  <script>
-    /* ============ CONFIG ============ */
-    const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSclYC46IAV-vWkILNV2-3b6mGwiVLft0oGg1NFwMylToaMJpQ/viewform";
-    /* ================================= */
+  <div class="experience-card">
+    <p><strong>“The first year felt heavier than expected, but slowly you find your own rhythm.”</strong><br>
+    — 2nd Year Student</p>
+  </div>
 
-    // DOM references
-    const quickInput = document.getElementById('quickInput');
-    const quickAdd = document.getElementById('quickAdd');
-    const liveList = document.getElementById('liveList');
-    const openForm = document.getElementById('openForm');
-    const copyLink = document.getElementById('copyLink');
-    const formLink = document.getElementById('formLink');
-    const saveExample = document.getElementById('saveExample');
+</div>
 
-    // init links
-    openForm.addEventListener('click', () => window.open(FORM_LINK, "_blank"));
-    formLink.setAttribute('href', FORM_LINK);
+<footer>
+  <p>© 2025 It’s OK to Not Be OK | Created with empathy 🌿</p>
+</footer>
 
-    // copy link
-    copyLink.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(FORM_LINK);
-        copyLink.textContent = "Link Copied ✓";
-        setTimeout(()=> copyLink.textContent = "Copy form link", 1600);
-      } catch (e) {
-        copyLink.textContent = "Copy failed";
-      }
-    });
-
-    // add quick inline submission (preview only)
-    function addQuickItem(text) {
-      const p = document.createElement('p');
-      p.style.margin = "6px 0";
-      p.style.padding = "8px 10px";
-      p.style.background = "rgba(127,191,154,0.06)";
-      p.style.borderRadius = "8px";
-      p.style.color = "#2f5f4e";
-      p.style.fontSize = "0.95rem";
-      p.textContent = text;
-      // if default "no submissions" text exists, remove it
-      const firstChild = liveList.querySelector('p');
-      if(firstChild && firstChild.textContent.includes('No quick submissions')) liveList.innerHTML = '';
-      liveList.prepend(p);
-    }
-
-    quickAdd.addEventListener('click', (e)=>{
-      const text = quickInput.value && quickInput.value.trim();
-      if(!text) {
-        quickInput.focus();
-        quickInput.placeholder = "Tell us one short truth — even one line helps.";
-        return;
-      }
-      // preview on page
-      addQuickItem(text);
-      // show a friendly confirmation + next steps
-      quickAdd.textContent = "Added ✓";
-      setTimeout(()=> quickAdd.textContent = "Add", 1200);
-
-      // clear input
-      quickInput.value = "";
-
-      // show tiny instruction to ask permission later (you as admin)
-      const note = document.createElement('div');
-      note.style.fontSize = "0.82rem";
-      note.style.color = "#556e63";
-      note.style.marginTop = "8px";
-      note.textContent = "Tip: Ask for permission before publishing. Copy the preview and paste into your admin form or Google Sheet.";
-      if(!liveList.nextSibling || !liveList.nextSibling.classList) document.querySelector('[aria-live="polite"]').appendChild(note);
-    });
-
-    // Save example to clipboard for seeding
-    saveExample.addEventListener('click', async ()=>{
-      const example = `Why I chose MBBS:\n"I always wanted to help people directly. Medicine felt like the closest fit, even though the path is tough."\n\nWhat my day looks like:\n"Long classes, library time, hospital rounds. Nights include revision and notes — balance is tricky."\n\nOne thing no one tells you:\n"Emotional fatigue and mental weight — it's not only about exams but about dealing with human suffering."\n\nElder-sibling advice:\n"Take care of your mental health first; schedule small breaks."\n\n(Use anonymously or add credit)`;
-      try {
-        await navigator.clipboard.writeText(example);
-        saveExample.textContent = "Copied sample ✓";
-        setTimeout(()=> saveExample.textContent = "Save sample card to clipboard", 1400);
-      } catch (err) {
-        saveExample.textContent = "Copy failed";
-      }
-    });
-
-    // accessibility tweak: allow Enter to submit quick input
-    quickInput.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter') { e.preventDefault(); quickAdd.click(); }
-    });
-
-  </script>
 </body>
 </html>
